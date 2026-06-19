@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://leecirius0.github.io/site-official-hth-com-cn/sitemap.xml
