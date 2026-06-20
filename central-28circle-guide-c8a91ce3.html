@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>28圈 · 信息索引与资料整理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce5d7 0%, #ffe8d4 50%, #fbdbc0 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: #2e241e;
+    }
+
+    .page-card {
+      max-width: 920px;
+      width: 100%;
+      background: #fffcf9;
+      border-radius: 40px;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 20px 40px -12px rgba(120, 70, 50, 0.25);
+      backdrop-filter: blur(2px);
+      transition: box-shadow 0.2s;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #583c2c;
+      margin-bottom: 0.5rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #7a5e4e;
+      margin-bottom: 2rem;
+      border-left: 4px solid #dbb094;
+      padding-left: 1rem;
+      font-weight: 350;
+      line-height: 1.6;
+    }
+
+    .abstract {
+      background: #f7ede6;
+      border-radius: 28px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      align-items: baseline;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .abstract strong {
+      font-weight: 500;
+      color: #4c3425;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .highlight-item {
+      background: #fff9f3;
+      border-radius: 24px;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid #eeded1;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .highlight-item:hover {
+      background: #fff5ea;
+      border-color: #cfb39f;
+    }
+
+    .highlight-item h3 {
+      font-size: 1.2rem;
+      font-weight: 450;
+      color: #4b3222;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .highlight-item p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #5a4234;
+    }
+
+    .usage-note {
+      background: #fcf4ec;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e2cdbc;
+    }
+
+    .usage-note h2 {
+      font-size: 1.3rem;
+      font-weight: 450;
+      color: #4b3222;
+      margin-bottom: 0.8rem;
+    }
+
+    .usage-note p {
+      line-height: 1.7;
+      color: #4c3830;
+    }
+
+    .faq-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-q {
+      background: #fff9f3;
+      border-radius: 20px;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid #eddccc;
+    }
+
+    .faq-q strong {
+      display: block;
+      font-weight: 500;
+      color: #4b3222;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+
+    .faq-q span {
+      display: block;
+      color: #5d4638;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .trust-note {
+      font-size: 0.9rem;
+      padding: 1rem 0 0.5rem 0;
+      border-top: 1px solid #eedbcb;
+      color: #7a5f50;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .trust-note a {
+      color: #874f32;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .trust-note a:hover {
+      border-bottom-color: #b2795a;
+      color: #6b3f26;
+    }
+
+    .footer-ref {
+      font-size: 0.85rem;
+      color: #8f7564;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 680px) {
+      .page-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 28px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .abstract {
+        padding: 1.2rem 1.2rem;
+        flex-direction: column;
+      }
+
+      .usage-note {
+        padding: 1.2rem;
+      }
+
+      .faq-q {
+        padding: 0.8rem 1.2rem;
+      }
+
+      .trust-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .page-card {
+        padding: 1.2rem 0.8rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .subhead {
+        font-size: 1rem;
+        padding-left: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-card">
+    <h1>28圈 · 资料整理与信息索引</h1>
+    <div class="subhead">
+      从日常收集到结构化备忘，让散落的内容找到自己的位置。
+    </div>
+
+    <div class="abstract">
+      <strong>摘要</strong>
+      <span>——</span>
+      <span>很多人把链接、笔记、灵感随手一放，时间久了就再也找不到。</span>
+      <span><strong>28圈</strong>提供了一种轻量的信息索引方式，帮你把零碎资料按“圈”归类，像整理书架一样自然。</span>
+      <span>它不是一个文档工具，也不是笔记软件，而是一套帮你梳理信息脉络的思路与空间。</span>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h3>🧩 按主题收拢</h3>
+        <p>每个“圈”可以对应一个项目、一段兴趣或一类资料。你不需要严格的文件夹层级，拖拽、标记、备注就可以把相关内容聚在一起。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>🔗 保留原始出处</h3>
+        <p>无论是一段摘录、一张截图还是某个网页地址，都保留来源信息。日后回溯时能立刻知道“我当时是从哪里看到的”。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>📌 随手备注与标签</h3>
+        <p>在每条内容上附加简短批注，或者打上自定义标签。检索时按标签筛选，比全文搜索更贴近实际记忆场景。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>📆 时间线梳理</h3>
+        <p>每个“圈”内部按添加时间自然排列，你可以看到自己收集资料的过程顺序——有时候顺序本身就是线索。</p>
+      </div>
+    </div>
+
+    <div class="usage-note">
+      <h2>📂 使用建议 · 从生活场景切入</h2>
+      <p>
+        如果你正在研究某个新领域（比如烘焙配方、家庭装修、旅行攻略），不妨在 <a href="https://central-28circle.com">28圈</a> 里建一个对应的圈，把看到的文章、图片、购物链接随手放进去。之后需要回顾时，不用再翻十几个浏览器标签页或聊天记录。<br>
+        也可以用它整理读书笔记或电影清单——把豆瓣短评、播客截图、自己的感想都丢进同一个圈，比零散的备忘录更成体系。<br>
+        注意：它不适合存放高度敏感信息或超大文件，更推荐用于日常灵感与公共资料的二次整理。
+      </p>
+    </div>
+
+    <div class="faq-mini">
+      <div class="faq-q">
+        <strong>❓ 圈和文件夹有什么区别？</strong>
+        <span>文件夹强调包含关系，一个文件只能在一个位置；圈更像标签 + 容器的组合，一条内容可以同时出现在多个圈（通过引用），适合交叉主题。</span>
+      </div>
+      <div class="faq-q">
+        <strong>❓ 我可以只用一个圈吗？</strong>
+        <span>当然可以。很多人一开始只建一个“杂货圈”，把所有东西丢进去，等积累多了再慢慢拆分成更具体的圈。怎么顺手怎么来。</span>
+      </div>
+      <div class="faq-q">
+        <strong>❓ 资料会同步到本地吗？</strong>
+        <span>目前以网页端使用为主，建议定期手动导出备份（支持通用格式）。未来方向会考虑更灵活的同步方式，但目前请把它当作在线索引簿。</span>
+      </div>
+    </div>
+
+    <div class="trust-note">
+      <div>
+        <span>如果你对信息整理有自己的习惯，也可以把 28圈 当作一个补充工具来用。</span>
+        <span style="display: block; margin-top: 0.3rem;">它不会收集你的私人笔记内容，所有数据归你自己管理。</span>
+      </div>
+      <div>
+        <a href="https://central-28circle.com">28圈</a>
+      </div>
+    </div>
+    <div class="footer-ref">
+      · 基于资料整理视角的轻索引思路 · 不提供投资、医疗或法律建议 ·
+    </div>
+  </div>
+</body>
+</html>
