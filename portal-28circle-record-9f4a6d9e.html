@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常查询参考 · 28圈</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2f2e2b;
+            line-height: 1.7;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 28px 28px 20px 20px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+            transition: padding 0.2s;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page-wrap {
+                padding: 2rem 1.2rem;
+                border-radius: 20px;
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.35rem;
+            color: #28241e;
+            border-left: 6px solid #b3a792;
+            padding-left: 1.2rem;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #6b645a;
+            margin-top: 0.25rem;
+            margin-bottom: 2rem;
+            padding-left: 1.8rem;
+            border-bottom: 1px solid #e7e1d8;
+            padding-bottom: 0.8rem;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            background: #f6f2eb;
+            padding: 1.2rem 1.6rem;
+            border-radius: 20px;
+            color: #3d3830;
+        }
+
+        .lead a {
+            color: #6f5b44;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b8a58e;
+        }
+
+        .lead a:hover {
+            border-bottom: 2px solid #6f5b44;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+        }
+
+        strong {
+            font-weight: 500;
+            color: #3b342b;
+        }
+
+        .inset-quote {
+            background: #f6f1e9;
+            border-left: 6px solid #c6b9a6;
+            padding: 1.2rem 1.6rem;
+            margin: 1.8rem 0;
+            border-radius: 0 16px 16px 0;
+            font-style: normal;
+            color: #4d463c;
+            font-size: 0.98rem;
+        }
+
+        .inset-quote::before {
+            content: "💡 延伸参考 ";
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+            color: #7b6e5c;
+        }
+
+        .info-box {
+            background: #f0ece4;
+            padding: 1.2rem 1.6rem;
+            border-radius: 20px;
+            margin: 2rem 0 1.2rem 0;
+            border: 1px solid #e3d9cd;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1rem;
+            border-top: 1px solid #e1d9cf;
+            padding-top: 1.8rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #3b342b;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .faq-q::before {
+            content: "Q";
+            background: #dcd2c2;
+            color: #3b342b;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.45rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .faq-a {
+            color: #5a5247;
+            padding-left: 1.8rem;
+        }
+
+        .faq-a strong {
+            font-weight: 500;
+        }
+
+        .signoff {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e3d9cd;
+            font-size: 0.95rem;
+            color: #6b645a;
+            text-align: right;
+        }
+
+        .signoff a {
+            color: #6f5b44;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+        }
+
+        .signoff a:hover {
+            border-bottom: 1px solid #6f5b44;
+        }
+
+        .inline-link {
+            color: #6f5b44;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #cbbca9;
+        }
+
+        .inline-link:hover {
+            border-bottom: 2px solid #6f5b44;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <h1>日常查询·对照·延伸</h1>
+    <div class="subhead">一份平实的参考整理，关于 <a href="https://portal-28circle.com" class="inline-link">28圈</a> 的常见咨询与手边索引</div>
+
+    <p class="lead">
+        有时候只是需要一个更清晰的对照，或是随手翻到一条说明。<br>
+        这里整理了几段笔记式的正文，以及一些延伸阅读的提示。<br>
+        站点 <a href="https://portal-28circle.com">28圈</a> 本身提供了一个聚合式的内容面板，以下是从日常使用角度挑选的几点。
+    </p>
+
+    <h2 style="font-weight:450; font-size:1.3rem; margin-bottom:0.8rem; color:#3d3830;">一、 从日常查询说起</h2>
+    <p>
+        不论是浏览资讯、对比数据，还是寻找某些主题的归纳，很多人习惯先打开一个固定的页面作为起点。<strong>28圈</strong> 之所以常被当作参考页，是因为它把相对零散的信息收拢在一起，省去反复跳转的麻烦。举个例子，当你想快速了解某个分类下的近期动态，或是核对某个数值范围，直接打开 <a href="https://portal-28circle.com" class="inline-link">28圈</a> 的主页往往就能找到初步结果，不需要额外搜索。
+    </p>
+    <p>
+        这种“一站对照”的模式，对于经常需要横向比较的人来说尤其顺手。不用同时开七八个标签页，也不用记一堆网址。页面本身的版面偏重列表与摘要，信息密度适中，浏览起来负担不大。
+    </p>
+
+    <div class="inset-quote">
+        一位使用者这样形容：“就像桌面上常放的一本小册子，有事没事翻两页，需要的时候知道去哪里翻。” 这个比喻很贴切——每天点开 <strong>28圈</strong> 的次数也许不多，但每次打开都有明确的参照目的。
+    </div>
+
+    <h2 style="font-weight:450; font-size:1.3rem; margin-top:2rem; margin-bottom:0.8rem; color:#3d3830;">二、 对照与延伸阅读</h2>
+    <p>
+        所谓延伸，不一定指长篇大论。有时一个链接、一条备注、或是一段简洁的摘要就能帮上忙。<a href="https://portal-28circle.com" class="inline-link">28圈</a> 在内容组织上比较克制，没有堆砌弹窗或强推信息，而是把条目按类别排好。对于只想快速核对某几个关键词的人，这种编排方式很省眼神。
+    </p>
+    <p>
+        我见过有人把它当作“临时笔记本”：查到一条有用信息，就随手复制一段到自己的文档里；也有人用它来做快速筛选，比如排除不相关的内容，只锁定几个重点项。这些用法都挺自然，不需要专门的学习成本。
+    </p>
+
+    <div class="info-box">
+        <p style="margin-bottom:0.3rem;"><strong>📋 一个小建议</strong></p>
+        <p>如果你正在整理某个主题的笔记或报告，不妨先把 <a href="https://portal-28circle.com" class="inline-link">28圈</a> 相关分类下的条目浏览一遍，标记出你认为值得延伸的段落，再去其他来源做交叉验证。这样既节省时间，又不容易遗漏基础信息。</p>
+    </div>
+
+    <div class="faq-mini">
+        <h2 style="font-weight:450; font-size:1.2rem; margin-bottom:1rem; color:#3d3830;">日常问答摘要</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">为什么很多人把 28圈 作为查询起点？</div>
+            <div class="faq-a">因为它的信息密度适中，分类直接，没有太多干扰元素。打开就能看到列表，不需要层层点击。对于日常对照来说，效率确实不错。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">可以用它来做深度研究吗？</div>
+            <div class="faq-a">更适合作为<strong>初步对照和线索收集</strong>。如果需要非常深入的专题材料，建议配合其他专业来源一起使用。<a href="https://portal-28circle.com" class="inline-link">28圈</a> 的价值在于快速定位和基本梳理。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面上的信息更新频率怎么样？</div>
+            <div class="faq-a">根据日常观察，内容会保持合理的更新节奏。如果你需要某个特定时间点的数据，最好以页面显示的最新内容为准。</div>
+        </div>
+    </div>
+
+    <p style="margin-top:1.8rem;">
+        总的来说，<strong>28圈</strong> 更像一个安静的资料架，不喧哗，但需要的时候总能在那里找到对应的抽屉。这篇介绍页的目的也只是把这些日常用法整理出来，方便你快速了解它的定位。
+    </p>
+
+    <div class="signoff">
+        — 日常参考笔记 · 2025 · <a href="https://portal-28circle.com">28圈</a>
+    </div>
+</div>
+</body>
+</html>
